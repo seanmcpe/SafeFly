@@ -36,6 +36,7 @@ class Main extends PluginBase implements Listener {
             if($sender instanceof Player) {
                 if($this->isPlayer($sender)) {
                     $this->removePlayer($sender);
+                    $sender->setAllowFlight(false);
                     $sender->sendMessage(TextFormat::RED . "You have disabled fly mode!");
                     return true;
                 }
