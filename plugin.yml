@@ -1,1 +1,10 @@
+name: SafeFly
+author: Sean_M
+version: "1.0.0"
+api: [1.0.0]
+description: Fly in survival without damaging players!
+main: Sean_M\SafeFly\Main
 
+commands:
+    fly:
+        description: "Activates or deactivates SafeFly."
