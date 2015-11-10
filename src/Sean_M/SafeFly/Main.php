@@ -26,8 +26,8 @@ class Main extends PluginBase implements Listener {
      }
    
      public function onEntityDamage(EntityDamageEvent $event) {
-        $cause = $event->getCause();
-        if($event instanceof EntityDamageByEntityEvent && $cause instanceof Player && $this->isPlayer($cause)) {
+        $damager = $event->getDamager();
+        if($event instanceof EntityDamageByEntityEvent && $damager instanceof Player && $this->isPlayer($cause)) {
             $event->setCancelled(true);
         }
      }
