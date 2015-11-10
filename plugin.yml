@@ -8,3 +8,5 @@ main: Sean_M\SafeFly\Main
 commands:
     fly:
         description: "Activates or deactivates SafeFly."
+        usage: "/fly"
+        permission: safefly.fly
