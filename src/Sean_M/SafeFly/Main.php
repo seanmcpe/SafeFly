@@ -27,10 +27,11 @@ class Main extends PluginBase implements Listener {
    
      public function onEntityDamage(EntityDamageEvent $event) {
         $cause = $event->getCause();
-        if(instace of EntityDamageByEntityEvent && $cause instanceof Player && $this->isPlayer($cause)){
+        if(instanceof EntityDamageByEntityEvent && $cause instanceof Player && $this->isPlayer($cause)){
             $event->setCancelled(true);
         }
      }
+
     public function onCommand(CommandSender $sender, Command $cmd, $label,array $args) {
         if(strtolower($cmd->getName()) == "fly") {
             if($sender instanceof Player) {
