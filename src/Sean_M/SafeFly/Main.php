@@ -26,11 +26,12 @@ class Main extends PluginBase implements Listener {
      }
    
      public function onEntityDamage(EntityDamageEvent $event) {
-        $victim = $event->getEntity();
-        $damager = $victim->getCause();
-        if($event instanceof EntityDamageByEntityEvent && $damager == 1 && $this->isPlayer($damager)) {
-            $damager->sendTip(TextFormat::RED . "You cannot damage players while in fly mode!");
-            $event->setCancelled(true);
+        if($event instanceof EntityDamageByEntityEvent) {
+        $damager = $event->getDamager();
+           if($damager instanceof Player && $this->isPlayer($damager)) {
+              $damager->sendTip(TextFormat::RED . "You cannot damage players while in fly mode!");
+              $event->setCancelled(true);
+           }
         }
      }
 
